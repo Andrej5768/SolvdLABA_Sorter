@@ -4,17 +4,7 @@ package MyApp;
 import java.util.Arrays;
 
 public class Sorter {
-    public static void sort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i; j < array.length; j++) {
-                if (array[i] > array[j]) {
-                    swap(array, i, j);
-                }
-            }
-        }
-    }
-
-    public static int[] getNumbers(int length) {
+        public static int[] getNumbers(int length) {
         int[] array = new int[length];
         for (int i = 0; i < array.length; i++){
             int a = (int) (Math.random() * 100);
@@ -25,6 +15,16 @@ public class Sorter {
 
     public static void printArray (int[] array){
         System.out.println(Arrays.toString(array));
+    }
+    
+    public static void sort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    swap(array, i, j);
+                }
+            }
+        }
     }
 
     public static void sorterShell(int[] array) {
