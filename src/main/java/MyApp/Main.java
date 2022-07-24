@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println("Sorting in progress...");
 
-        Sorter.sort(array);
+        Sorter.quickSort(array, 0, array.length - 1);
 
         System.out.println("Sorting finished");
 
