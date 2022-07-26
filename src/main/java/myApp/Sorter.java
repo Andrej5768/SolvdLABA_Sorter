@@ -1,4 +1,4 @@
-package MyApp;
+package myApp;
 
 
 import java.util.Arrays;
@@ -7,7 +7,7 @@ public class Sorter {
         public static int[] getNumbers(int length) {
         int[] array = new int[length];
         for (int i = 0; i < array.length; i++){
-            int a = (int) (Math.random() * 100);
+            int a = (int) (Math.random() * length);
             array[i] = a;
         }
         return array;
@@ -28,9 +28,13 @@ public class Sorter {
     }
 
     public static void sorterShell(int[] array) {
+        // Высчитываем промежуток между проверяемыми элементами
         int gap = array.length / 2;
+        // Пока разница между элементами есть
         while (gap >= 1) {
             for (int right = 0; right < array.length; right++) {
+                // Смещаем правый указатель, пока не сможем найти такой, что
+                // между ним и элементом до него не будет нужного промежутка
                 for (int c = right - gap; c >= 0; c -= gap) {
                     if (array[c] > array[c + gap]) {
                         swap(array, c, c + gap);
