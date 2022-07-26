@@ -2,7 +2,7 @@ package myApp;
 
 public class Main {
     public static void main(String[] args) {
-        int count = 111;
+        int count = 20;
         int[] array = Sorter.getNumbers(count);
 
         System.out.println("Hello World!");

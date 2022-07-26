@@ -59,26 +59,24 @@ public class Sorter {
         }
     }
 
-    public static void quickSort(int[] source, int leftBorder, int rightBorder) {
+    public static void quickSort(int[] array, int leftBorder, int rightBorder) {
         int leftMarker = leftBorder;
         int rightMarker = rightBorder;
-        int pivot = source[(leftMarker + rightMarker) / 2];
+        int pivot = array[(leftMarker + rightMarker) / 2];
         do {
             // Двигаем левый маркер слева направо пока элемент меньше, чем pivot
-            while (source[leftMarker] < pivot) {
+            while (array[leftMarker] < pivot) {
                 leftMarker++;
             }
             // Двигаем правый маркер, пока элемент больше, чем pivot
-            while (source[rightMarker] > pivot) {
+            while (array[rightMarker] > pivot) {
                 rightMarker--;
             }
             // Проверим, не нужно обменять местами элементы, на которые указывают маркеры
             if (leftMarker <= rightMarker) {
                 // Левый маркер будет меньше правого только если мы должны выполнить swap
                 if (leftMarker < rightMarker) {
-                    int tmp = source[leftMarker];
-                    source[leftMarker] = source[rightMarker];
-                    source[rightMarker] = tmp;
+                    swap(array, leftMarker, rightMarker);
                 }
                 // Сдвигаем маркеры, чтобы получить новые границы
                 leftMarker++;
@@ -88,10 +86,10 @@ public class Sorter {
 
         // Выполняем рекурсивно для частей
         if (leftMarker < rightBorder) {
-            quickSort(source, leftMarker, rightBorder);
+            quickSort(array, leftMarker, rightBorder);
         }
         if (leftBorder < rightMarker) {
-            quickSort(source, leftBorder, rightMarker);
+            quickSort(array, leftBorder, rightMarker);
         }
     }
 
