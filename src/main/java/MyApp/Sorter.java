@@ -42,6 +42,8 @@ public class Sorter {
     }
 
     public static void selectionSort(int[] array) {
+        // Каждый проход выбирать самый минимальный элемент и смещать его в начало.
+        // При этом каждый новый проход начинать сдвигаясь вправо, то есть первый проход — с первого элемента, второй проход — со второго.
         for (int left = 0; left < array.length; left++) {
             int minInd = left;
             for (int i = left; i < array.length; i++) {
